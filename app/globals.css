@@ -248,6 +248,76 @@ html.lenis body {
   }
 }
 
+/* HeroV2 — giant drifting ghost typography background (Option 3) */
+.hero-ghost-row {
+  position: absolute;
+  left: 0;
+  white-space: nowrap;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 800;
+  font-size: clamp(4rem, 14vw, 11rem);
+  color: rgba(116, 59, 251, 0.1);
+}
+.hero-ghost-row-1 {
+  top: 6%;
+  animation: heroGhostSlide1 18s linear infinite;
+}
+.hero-ghost-row-2 {
+  top: 58%;
+  animation: heroGhostSlide2 22s linear infinite;
+}
+@keyframes heroGhostSlide1 {
+  from { transform: translateX(10%); }
+  to { transform: translateX(-55%); }
+}
+@keyframes heroGhostSlide2 {
+  from { transform: translateX(-45%); }
+  to { transform: translateX(15%); }
+}
+.hero-ghost-blob {
+  position: absolute;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, #c9a8ff, #743bfb);
+}
+
+/* HeroV2 — RGB-split glitch on headline hover (Option 3) */
+.glitch-line {
+  position: relative;
+  display: block;
+}
+.glitch-line::before,
+.glitch-line::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  opacity: 0;
+  pointer-events: none;
+}
+.glitch-line:hover::before {
+  color: #ff2b6e;
+  opacity: 0.7;
+  animation: heroGlitch1 0.35s steps(2, end) infinite;
+}
+.glitch-line:hover::after {
+  color: #2bd9ff;
+  opacity: 0.7;
+  animation: heroGlitch2 0.3s steps(2, end) infinite;
+}
+@keyframes heroGlitch1 {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-3px, 2px); }
+  100% { transform: translate(2px, -2px); }
+}
+@keyframes heroGlitch2 {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(3px, -2px); }
+  100% { transform: translate(-2px, 2px); }
+}
+
 /* Theme-aware logo swap: white logo on dark, dark logo on light */
 .logo-light {
   display: none;

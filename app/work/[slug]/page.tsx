@@ -25,9 +25,9 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
         style={{ background: project.color }}
       >
         <div className="container-x pt-40">
-          <div className="kicker mb-6 text-text/70">{project.client}</div>
+          <div className="kicker mb-6 text-[color-mix(in_srgb,var(--text)_70%,transparent)]">{project.client}</div>
           <h1 className="display text-fluid-h1">{project.name}</h1>
-          <div className="mt-8 flex flex-wrap gap-8 kicker text-text/70">
+          <div className="mt-8 flex flex-wrap gap-8 kicker text-[color-mix(in_srgb,var(--text)_70%,transparent)]">
             <span>Year — {project.year}</span>
             <span>Services — {project.tags.join(", ")}</span>
             <span>Role — Brand, Build, Grow</span>
@@ -67,7 +67,7 @@ export default function CaseStudy({ params }: { params: { slug: string } }) {
         className="block py-24 text-center transition-colors"
         style={{ background: next.color }}
       >
-        <div className="kicker mb-4 text-text/70">Next project</div>
+        <div className="kicker mb-4 text-[color-mix(in_srgb,var(--text)_70%,transparent)]">Next project</div>
         <div className="display text-fluid-h2">{next.name} →</div>
       </Link>
     </>

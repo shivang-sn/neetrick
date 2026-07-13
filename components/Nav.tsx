@@ -41,7 +41,7 @@ export default function Nav() {
           hidden ? "-translate-y-full" : "translate-y-0"
         } ${
           scrolled && !open
-            ? "bg-bg/70 backdrop-blur-xl border-b border-line"
+            ? "bg-[color-mix(in_srgb,var(--bg)_70%,transparent)] backdrop-blur-xl border-b border-line"
             : "bg-transparent"
         }`}
       >
@@ -159,11 +159,6 @@ export default function Nav() {
               {SITE.email}
             </a>
             <span className="text-muted">{SITE.location}</span>
-            <div className="flex gap-4 kicker">
-              <a href="#" data-cursor="link" className="hover:text-accent">Instagram</a>
-              <a href="#" data-cursor="link" className="hover:text-accent">LinkedIn</a>
-              <a href="#" data-cursor="link" className="hover:text-accent">X</a>
-            </div>
           </div>
         </div>
       </div>

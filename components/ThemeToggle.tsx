@@ -22,7 +22,9 @@ export default function ThemeToggle() {
     <button
       onClick={toggle}
       data-cursor="link"
-      aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
+      aria-label={
+        mounted ? (isDark ? "Switch to light mode" : "Switch to dark mode") : "Toggle theme"
+      }
       className="relative flex h-10 w-[68px] items-center rounded-full border border-line px-1 transition-colors hover:border-accent"
     >
       {/* sliding knob */}

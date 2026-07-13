@@ -23,7 +23,7 @@ export default function Toast({
           transition={{ duration: 0.4, ease: [0.2, 1, 0.3, 1] }}
           role="status"
           aria-live="polite"
-          className="fixed right-4 top-20 z-[60] w-[min(360px,calc(100vw-2rem))] rounded-2xl border border-line bg-surface/95 p-5 shadow-2xl backdrop-blur-xl md:right-6 md:top-24"
+          className="fixed right-4 top-20 z-[60] w-[min(360px,calc(100vw-2rem))] rounded-2xl border border-line bg-[color-mix(in_srgb,var(--surface)_95%,transparent)] p-5 shadow-2xl backdrop-blur-xl md:right-6 md:top-24"
         >
           <div className="flex items-start justify-between gap-4">
             <div>

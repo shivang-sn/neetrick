@@ -33,7 +33,7 @@ export default function SoundToggle() {
       </button>
 
       {nudge && !enabled && (
-        <div className="absolute right-0 top-12 w-max rounded-full border border-accent/40 bg-surface px-4 py-2 text-xs text-text shadow-lg">
+        <div className="absolute right-0 top-12 w-max rounded-full border border-[color-mix(in_srgb,var(--accent)_40%,transparent)] bg-surface px-4 py-2 text-xs text-text shadow-lg">
           🔊 Sound on?
         </div>
       )}

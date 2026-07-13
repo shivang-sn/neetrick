@@ -54,7 +54,7 @@ export default function ProcessSection() {
   );
 
   const slideClass =
-    "process-slide flex h-screen w-screen shrink-0 flex-col justify-center px-[clamp(1.25rem,5vw,6rem)] md:w-screen";
+    "process-slide flex h-screen w-screen shrink-0 flex-col items-center justify-center text-center px-[clamp(1.25rem,5vw,6rem)] md:w-screen";
 
   return (
     <section
@@ -79,20 +79,24 @@ export default function ProcessSection() {
           {/* Step slides */}
           {PROCESS.map((p) => (
             <div key={p.no} className={slideClass}>
-              <div className="display text-[clamp(5rem,18vw,15rem)] leading-none text-accent">
-                {p.no}
+              <div className="relative max-w-2xl rounded-3xl border border-line bg-surface-2 px-8 py-12 shadow-2xl sm:px-14 sm:py-16">
+                {/* glossy highlight */}
+                <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-b from-white/10 via-white/0 to-transparent" />
+                <div className="relative">
+                  <div className="display text-[clamp(3.5rem,9vw,7rem)] leading-none text-accent">
+                    {p.no}
+                  </div>
+                  <h3 className="display mt-2 text-fluid-h2">{p.title}</h3>
+                  <p className="mx-auto mt-4 max-w-lg text-fluid-body text-muted">
+                    {p.text}
+                  </p>
+                </div>
               </div>
-              <h3 className="display mt-2 text-fluid-h2">{p.title}</h3>
-              <p className="mt-4 max-w-lg text-fluid-body text-muted">
-                {p.text}
-              </p>
             </div>
           ))}
 
           {/* Final slide — CTA */}
-          <div
-            className={`${slideClass} items-start md:items-center md:text-center`}
-          >
+          <div className={slideClass}>
             <h3 className="display text-fluid-h1">
               Ready to <span className="text-accent">grow?</span>
             </h3>

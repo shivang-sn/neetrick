@@ -30,7 +30,7 @@ export default function WorkPage() {
                 className="flex aspect-[4/3] items-center justify-center transition-transform duration-700 group-hover:scale-105"
                 style={{ background: w.color }}
               >
-                <span className="display text-4xl text-text/80">{w.name}</span>
+                <span className="display text-4xl text-[color-mix(in_srgb,var(--text)_80%,transparent)]">{w.name}</span>
               </div>
               <div className="mt-4 flex items-center justify-between">
                 <h3 className="display text-2xl">{w.name}</h3>

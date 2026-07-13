@@ -1,20 +1,15 @@
 "use client";
 
 import Link from "next/link";
-import dynamic from "next/dynamic";
 import { useEffect, useRef } from "react";
 import { SITE } from "@/lib/content";
 import { useSound } from "@/providers/SoundProvider";
 import Marquee from "../Marquee";
 import Magnetic from "../Magnetic";
 import HeroScrollBadge from "./HeroScrollBadge";
+import HeroGhostField from "./HeroGhostField";
 
-// WebGL/particle background — client-only so it never breaks SSR/build.
-const HeroParticles = dynamic(() => import("./HeroParticles"), {
-  ssr: false,
-});
-
-export default function Hero() {
+export default function HeroV2() {
   const { play } = useSound();
   const titleRef = useRef<HTMLHeadingElement>(null);
 
@@ -35,15 +30,15 @@ export default function Hero() {
 
   return (
     <section className="relative flex min-h-screen flex-col justify-end overflow-hidden pb-0 pt-32">
-      {/* Interactive particle background */}
+      {/* Giant drifting ghost typography + liquid cursor blob (Option 3) */}
       <div className="absolute inset-0 z-0">
-        <HeroParticles />
+        <HeroGhostField />
       </div>
 
       {/* Accent glow */}
       <div className="pointer-events-none absolute right-[-10%] top-[8%] h-[60vh] w-[60vh] rounded-full bg-[color-mix(in_srgb,var(--accent)_25%,transparent)] blur-[130px]" />
 
-      {/* Clickable scroll badge (replaces the old bare ring) */}
+      {/* Clickable scroll badge */}
       <div className="absolute right-[6%] top-[14%] z-10 hidden md:block">
         <HeroScrollBadge />
       </div>
@@ -60,7 +55,7 @@ export default function Hero() {
           className="display text-fluid-h1"
           style={{ transition: "transform 0.3s ease-out", transformStyle: "preserve-3d" }}
         >
-          <span className="reveal-line">
+          <span className="reveal-line glitch-line" data-text="Smart tricks.">
             <span
               style={{
                 display: "inline-block",
@@ -71,7 +66,7 @@ export default function Hero() {
               Smart tricks.
             </span>
           </span>
-          <span className="reveal-line">
+          <span className="reveal-line glitch-line" data-text="Better everyday.">
             <span
               style={{
                 display: "inline-block",

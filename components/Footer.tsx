@@ -5,6 +5,7 @@ import { NAV_LINKS, SERVICES, SITE } from "@/lib/content";
 import { useSound } from "@/providers/SoundProvider";
 import Marquee from "./Marquee";
 import Magnetic from "./Magnetic";
+import AnimatedTitle from "./AnimatedTitle";
 
 export default function Footer() {
   const { play } = useSound();
@@ -27,9 +28,13 @@ export default function Footer() {
               className="logo-light h-34 w-auto sm:h-24 md:h-34"
             />
           </div>
-          <div className="text-center"><h3 className="display text-fluid-h3 ">
-              Got a brief? <br /> Let&apos;s make something smarter.
-            </h3>
+          <div className="text-center">
+            <AnimatedTitle
+              as="h3"
+              text="Got a brief? Let's make something smarter."
+              className="text-fluid-h3 justify-center text-center"
+              accentWords={["smarter."]}
+            />
             <Magnetic className="mt-6 inline-block">
               <Link
                 href="/contact"
@@ -94,11 +99,6 @@ export default function Footer() {
               <li>{SITE.phone}</li>
               <li>{SITE.location}</li>
             </ul>
-            <div className="mt-4 flex gap-4 kicker justify-center">
-              <a href="#" data-cursor="link" className="hover:text-accent">IG</a>
-              <a href="#" data-cursor="link" className="hover:text-accent">IN</a>
-              <a href="#" data-cursor="link" className="hover:text-accent">X</a>
-            </div>
           </div>
         </div>
       </div>
